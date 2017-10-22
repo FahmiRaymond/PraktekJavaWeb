@@ -16,6 +16,20 @@
     </head>
     <body>
         <h1>Form Pertama</h1>
+        <%!
+            public class Anggota{
+                String URL = "jdbc:mysql://localhost:3306/db_javaweb";
+                String USERNAME = "root";
+                String PASSWORD = "";
+                String insertSQL = "insert into t_anggota (nama_depan, "
+                            + "nama_belakang, email, jenis_kelamin, "
+                            + "tanggal_lahir,last_update) VALUES "
+                            + "(?,?,?,?,?,?)";
+                            String selectSQL = "select nama_depan, nama_belakang, email, "
+                            + "jenis_kelamin, tanggal_lahir FROM t_anggota";
+            Connection connection = null;
+            PreparedStatement insertAnggota = null;
+            }%>
         <form name="myForm" action="index.jsp" method="POST"><table border="0">
                 <tbody>
                     <tr>
