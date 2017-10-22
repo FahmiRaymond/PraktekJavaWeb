@@ -9,9 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Praktikum Java Web</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Display</h1>
+        <% 
+            String namaDepan =request.getParameter("tnamadepan");
+            String namaBelakang =request.getParameter("tnamabelakang");
+            String email =request.getParameter("temail");
+            String jk =request.getParameter("jk");
+            String tanggalLahir =request.getParameter("ttanggallahir");
+            %>
     </body>
 </html>
