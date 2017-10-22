@@ -14,14 +14,12 @@
     <body>
         <h1>Form Pertama</h1>
         <form name="myForm" action="display.jsp" method="POST"><table border="0">
-                <thead>
+                <tbody>
                     <tr>
                         <th>Nama Depan</th>
                         <th>:</th>
                         <th><input type="text" name="tnamadepan" value="" size="50" /></th>
                     </tr>
-                </thead>
-                <tbody>
                     <tr>
                         <td>Nama Belakang</td>
                         <td>:</td>
