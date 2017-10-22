@@ -3,8 +3,11 @@
     Created on : Oct 22, 2017, 3:32:24 PM
     Author     : fahmi
 --%>
-
+<%@page import="java.sql.*"%>
+<%@page import="java.util.Date"%>
+<% Class.forName("com.mysql.jdbc.Driver"); %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
