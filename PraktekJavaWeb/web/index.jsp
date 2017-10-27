@@ -58,7 +58,19 @@
                     }
                     return result;
                 }
-            }%>
+            }
+        %>
+        <%
+            int result = 0;
+            String namaDepan = new String();
+            String namaBelakang = new String();
+            String email = new String();
+            String jenisKelamin = new String();
+            String tanggalLahir = new String();
+            
+            Date date = new Date();
+            Timestamp ts = new Timestamp(date.getTime());
+        %>
         <form name="myForm" action="index.jsp" method="POST"><table border="0">
                 <tbody>
                     <tr>
