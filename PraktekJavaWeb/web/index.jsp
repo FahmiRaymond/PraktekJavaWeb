@@ -25,10 +25,12 @@
                             + "nama_belakang, email, jenis_kelamin, "
                             + "tanggal_lahir,last_update) VALUES "
                             + "(?,?,?,?,?,?)";
-                            String selectSQL = "select nama_depan, nama_belakang, email, "
+                String selectSQL = "select nama_depan, nama_belakang, email, "
                             + "jenis_kelamin, tanggal_lahir FROM t_anggota";
-            Connection connection = null;
-            PreparedStatement insertAnggota = null;
+                Connection connection = null;
+                PreparedStatement insertAnggota = null;
+                PreparedStatement selectAnggota = null;
+                ResultSet resultSet = null;
 
                 public Anggota(){
                     try{
