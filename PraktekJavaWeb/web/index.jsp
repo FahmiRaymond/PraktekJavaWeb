@@ -70,6 +70,18 @@
             
             Date date = new Date();
             Timestamp ts = new Timestamp(date.getTime());
+            
+            if(request.getParameter("simpan")!=null){
+                namaDepan = request.getParameter("tnamadepan");
+                namaBelakang = request.getParameter("tnamabelakang");
+                email = request.getParameter("temail");
+                jenisKelamin = request.getParameter("jk");
+                tanggalLahir = request.getParameter("ttanggallahir");
+                
+                Anggota anggota = new Anggota();
+                result = anggota.setAnggota(namaDepan, namaBelakang, email, 
+                        jenisKelamin, tanggalLahir, ts);
+            }
         %>
         <form name="myForm" action="index.jsp" method="POST"><table border="0">
                 <tbody>
