@@ -13,9 +13,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Praktikum Java Web</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
     </head>
-    <body>
-        <h1>Form Pertama</h1>
+    <body onload="tampilPesan()">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">PraktikumJavaWeb</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">about</a></li>
+                    </ul>
+                </div>
+            </nav>
         <%!
             public class Anggota{
                 String URL = "jdbc:mysql://localhost:3306/db_javaweb";
@@ -97,75 +108,83 @@
             Anggota anggota = new Anggota();
             ResultSet anggotas = anggota.getAnggota();
         %>
-        <form name="myForm" action="index.jsp" method="POST"><table border="0">
-                <tbody>
-                    <tr>
-                        <td>Nama Depan</td>
-                        <td>:</td>
-                        <td><input type="text" name="tnamadepan" value="" size="50" /></td>
-                    </tr>
-                    <tr>
-                        <td>Nama Belakang</td>
-                        <td>:</td>
-                        <td><input type="text" name="tnamabelakang" value="" size="50" /></td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td>:</td>
-                        <td><input type="text" name="temail" value="" size="50" /></td>
-                    </tr>
-                    <tr>
-                        <td>Jenis Kelamin</td>
-                        <td>:</td>
-                        <td><select name="jk">
-                                <option>Laki-laki</option>
-                                <option>Perempuan</option>
-                            </select></td>
-                    </tr>
-                    <tr>
-                        <td>Tanggal Lahir</td>
-                        <td>:</td>
-                        <td><input type="date" name="ttanggallahir" value="" size="50" /></td>
-                    </tr>
-                </tbody>
-            </table>
-            <input type="reset" value="Clear" name="clear" />
-            <input type="submit" value="Simpan" name="simpan" />
-        </form>
-        <script language="JavaScript">
-            function tampilPesan(){
-                if(document.myForm.hidden.value == 1){
-                    alert("Data berhasil disimpan");
-                }
-            }
-        </script>
-        
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>NO</th>
-                    <th>Nama Depan</th>
-                    <th>Nama Belakang</th>
-                    <th>Email</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Tanggal Lahir</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% int i=1; %>
-                <% while (anggotas.next()){ %>
-                <tr>
-                    <td><%= i %></td>
-                    <td><%= anggotas.getString("nama_depan") %></td>
-                    <td><%= anggotas.getString("nama_belakang") %></td>
-                    <td><%= anggotas.getString("email") %></td>
-                    <td><%= anggotas.getString("jenis_kelamin") %></td>
-                    <td><%= anggotas.getString("tanggal_lahir") %></td>
-                </tr>
-                <% i++; %>
-                <% } %>
-            </tbody>
-        </table>
-
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h1>Form Pertama </h1>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <form name="myForm" action="index.jsp" method="POST"><table border="0">
+                                    <div class="form-group">
+                                        <label for="">Nama Depan </label>
+                                        <input type="text" class="form-control" name="tnamadepan" placeholder="nama depan">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Nama Belakang</label>
+                                        <input type="text" class="form-control" name="tnamabelakang" placeholder="nama belakang">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Email</label>
+                                        <input type="text" class="form-control" name="temail" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Jenis Kelamin</label>
+                                        <select name="jk" class="form-control">
+                                            <option>Laki-laki</option>
+                                            <option>Perempuan</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Tanggal Lahir</label>
+                                        <input type="date" class="form-control" name="ttanggallahir">
+                                    </tbody>
+                                </table>
+                                <input type="reset" value="Clear" name="clear" class="btn btn-primary">
+                                <input type="submit" value="Simpan" name="simpan" class="btn btn-primary">
+                            </form>
+                        </div>
+                    </div>
+                    <script language="JavaScript">
+                        function tampilPesan(){
+                            if(document.myForm.hidden.value == 1){
+                                alert("Data berhasil disimpan");
+                            }
+                        }
+                    </script>
+                    <br>
+                    <br>    
+                    <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>NO</th>
+                                <th>Nama Depan</th>
+                                <th>Nama Belakang</th>
+                                <th>Email</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Tanggal Lahir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% int i=1; %>
+                            <% while (anggotas.next()){ %>
+                            <tr>
+                                <td><%= i %></td>
+                                <td><%= anggotas.getString("nama_depan") %></td>
+                                <td><%= anggotas.getString("nama_belakang") %></td>
+                                <td><%= anggotas.getString("email") %></td>
+                                <td><%= anggotas.getString("jenis_kelamin") %></td>
+                                <td><%= anggotas.getString("tanggal_lahir") %></td>
+                            </tr>
+                            <% i++; %>
+                            <% } %>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
