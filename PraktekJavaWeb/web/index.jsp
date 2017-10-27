@@ -86,9 +86,9 @@
         <form name="myForm" action="index.jsp" method="POST"><table border="0">
                 <tbody>
                     <tr>
-                        <th>Nama Depan</th>
-                        <th>:</th>
-                        <th><input type="text" name="tnamadepan" value="" size="50" /></th>
+                        <td>Nama Depan</td>
+                        <td>:</td>
+                        <td><input type="text" name="tnamadepan" value="" size="50" /></td>
                     </tr>
                     <tr>
                         <td>Nama Belakang</td>
@@ -118,5 +118,12 @@
             <input type="reset" value="Clear" name="clear" />
             <input type="submit" value="Simpan" name="simpan" />
         </form>
+        <script language="JavaScript">
+            function tampilPesan(){
+                if(document.myForm.hidden.value == 1){
+                    alert("Data berhasil disimpan");
+                }
+            }
+        </script>
     </body>
 </html>
