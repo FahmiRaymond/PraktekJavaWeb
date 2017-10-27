@@ -43,6 +43,15 @@
                         e.printStackTrace();
                     }
                 }
+
+                public ResultSet getAnggota(){
+                    try{
+                        resultSet = selectAnggota.executeQuery();
+                    }catch (SQLException e){
+                        System.out.print(e);
+                    }
+                    return resultSet;
+                }
                 
                 public int setAnggota(String namaDepan, String namaBelakang,
                                       String email, String jenisKelamin,
