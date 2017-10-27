@@ -139,5 +139,33 @@
                 }
             }
         </script>
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>NO</th>
+                    <th>Nama Depan</th>
+                    <th>Nama Belakang</th>
+                    <th>Email</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Tanggal Lahir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% int i=1; %>
+                <% while (anggotas.next()){ %>
+                <tr>
+                    <td><%= i %></td>
+                    <td><%= anggotas.getString("nama_depan") %></td>
+                    <td><%= anggotas.getString("nama_belakang") %></td>
+                    <td><%= anggotas.getString("email") %></td>
+                    <td><%= anggotas.getString("jenis_kelamin") %></td>
+                    <td><%= anggotas.getString("tanggal_lahir") %></td>
+                </tr>
+                <% i++; %>
+                <% } %>
+            </tbody>
+        </table>
+
     </body>
 </html>
