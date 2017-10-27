@@ -30,16 +30,34 @@
             Connection connection = null;
             PreparedStatement insertAnggota = null;
 
-            public Anggota(){
-                try{
-                    connection = DriverManager.getConnection(URL,
-                                                USERNAME,
-                                                PASSWORD);
-                    insertAnggota = connection.prepareStatement(insertSQL);
-                }catch(SQLException e) {
-                    e.printStackTrace();
+                public Anggota(){
+                    try{
+                        connection = DriverManager.getConnection(URL,
+                                                    USERNAME,
+                                                    PASSWORD);
+                        insertAnggota = connection.prepareStatement(insertSQL);
+                    }catch(SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
+                
+                public int setAnggota(String namaDepan, String namaBelakang,
+                                      String email, String jenisKelamin,
+                                      String tanggalLahir, Timestamp ts){
+                    int result = 0;
+                    try{
+                        insertAnggota.setString(1, namaDepan);
+                        insertAnggota.setString(2, namaBelakang);
+                        insertAnggota.setString(3, email);
+                        insertAnggota.setString(4, jenisKelamin);
+                        insertAnggota.setString(5, tanggalLahir);
+                        insertAnggota.setTimestamp(6, ts);
+                        result = insertAnggota.executeUpdate();
+                    }catch(SQLException e){
+                        System.out.print(e);
+                    }
+                    return result;
+                }
             }%>
         <form name="myForm" action="index.jsp" method="POST"><table border="0">
                 <tbody>
