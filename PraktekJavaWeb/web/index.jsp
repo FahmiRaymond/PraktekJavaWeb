@@ -15,7 +15,7 @@
         <title>Praktikum Java Web</title>
         <link href="css/bootstrap.min.css" rel="stylesheet"/>
     </head>
-    <body onload="tampilPesan()">
+    <body>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -152,7 +152,8 @@
                         }
                     </script>
                     <br>
-                    <br>    
+                    <hr>
+                    <br>
                     <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -181,6 +182,7 @@
                         </tbody>
                     </table>
                     </div>
+                    <hr>
                 </div>
             </div>
         </div>
